@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Order</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<main id="order">
+    <header id="header">
+        <div class="header__wrap header-order">
+            <div class="logo">
+                <img src="img/icons/logo.svg" alt="The San Diego Union-Tribune">
+            </div>
+            <button class="show-sidebar">
+                <img src="img/icons/cart.svg" alt="cart icon">
+            </button>
+        </div>
+    </header>
+        <div class="order__content tabs">
+            <div class="order__steps">
+                <ul class="tabs__caption">
+                    <li class="active current">Create an account</li>
+                    <li>Billing address</li>
+                    <li>Payment</li>
+                </ul>
+            </div>
+            <div class="order__item">
+                <h3 class="item__title">Digital</h3>
+                <p class="item__price">99¢ 4 weeks only then 01.99 / week</p>
+            </div>
+            <div class="order__steps-content tabs__content">
+                <div class="order-step__create-account tab__content active">
+                    <div class="create-account">
+                        <h3>Create an account</h3>
+                        <div class="log-in">
+                            <p>Already have an account?</p>
+                            <button>Log in</button>
+                        </div>
+                        <div class="auth-method">
+                            <button class="auth-method__facebook">Facebook <img src="img/icons/facebook.svg" alt="Facebook icon"></button>
+                            <button class="auth-method__google">Google <img src="img/icons/google.svg" alt="Google icon"></button>
+                        </div>
+                    </div>
+                    <form class="log-in-form">
+                        <div class="form__email">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form__password">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                            <button type="button" class="password-show">Show</button>
+                        </div>
+                        <div class="form__price">
+                            <p>Price: $ <span>0.99</span></p>
+                        </div>
+                        <button class="form__btn" type="button">Continue</button>
+                    </form>
+                </div>
+                <div class="order-step__billing-address tab__content">
+                    <form class="billing-address__form">
+                        <div class="form__email">
+                            <label for="country">Country</label>
+                            <input type="text" id="country" name="country" required>
+                        </div>
+                        <div class="form__password">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <button class="form__btn" type="button">Continue</button>
+                    </form>
+                </div>
+                <div class="order-step__payment tab__content">
+                    <form class="payment-form" id="paymentForm" name="paymentForm">
+                        <div class="payment-type">
+                            <img src="img/visa.svg" alt="Visa">
+                            <img src="img/masterCard.svg" alt="MasterCard">
+                            <img src="img/maestro.svg" alt="Maestro">
+                            <img src="img/mir.svg" alt="МИР">
+                        </div>
+                        <div class="card-number__block">
+                            <label for="card-number">Card number</label>
+                            <div class="card-number__input-wrap">
+                                <img class="payment-type__img"/>
+                                <input name="paymentType" id="card-number" type="text" required placeholder="XXXX XXXX XXXX XXXX" maxlength="19" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                            </div>
+                        </div>
+                        <div class="holder-card__block">
+                            <label for="holder-card">Name on card</label>
+                            <input name="holderCard" id="holder-card" type="text" required placeholder="YOUR NAME" onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.charCode == 32'>
+                        </div>
+                        <div class="input-group">
+                            <div class="card-expires__block">
+                                <label for="card-expires">Expiration date</label>
+                                <input name="cardExpires" id="card-expires" type="text" placeholder="MM / YY" required>
+                            </div>
+                            <div class="cvv-cvc__block">
+                                <label for="cvv-cvc">CVV/CVC</label>
+                                <input name="cvvCvc" id="cvv-cvc" maxlength="3" required minlength="3" type="password" placeholder="XXX" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                            </div>
+                        </div>
+                        <button class="form__btn payment__btn" type="submit">Continue</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <footer id="footer">
+        <div class="footer__wrap footer-order">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+</main>
+<aside class="order-sidebar">
+    <div class="order-sidebar__title">
+        <h2>Your order</h2>
+        <img class="cart" src="img/icons/cart.svg" alt="cart icon">
+        <img class="close" src="img/icons/close.svg" alt="close icon">
+    </div>
+    <h3>Digital Access</h3>
+    <p>Unlimited access to website, and the smartphone and tablet apps. $0.99</p>
+    <p>Sales tax may apply.</p>
+    <div class="order-sidebar__total">
+        <p>Total: $<span>0.99</span></p>
+    </div>
+</aside>
+
+<div class="error popup">
+    <div class="popup-wrap">
+        <button class="popup-close">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717
+                            L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+                            c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287
+                            l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+                            L284.286,256.002z"/>
+                    </g>
+                </g>
+            </svg>
+        </button>
+        <img src="img/icons/exclamation-solid.svg" alt="Error icon">
+        <h3>Error</h3>
+    </div>
+</div>
+<div class="success popup">
+    <div class="popup-wrap">
+        <button class="popup-close">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717
+                            L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+                            c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287
+                            l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+                            L284.286,256.002z"/>
+                    </g>
+                </g>
+            </svg>
+        </button>
+        <img src="img/icons/check-solid.svg" alt="Success icon">
+        <h3>Success</h3>
+    </div>
+</div>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/order.js"></script>
+</body>
+</html>

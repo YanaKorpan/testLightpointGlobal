@@ -1,0 +1,317 @@
+#header
+  position: relative
+  .show-sidebar
+    display: none
+  .header__wrap.header-order
+    justify-content: center
+    .logo
+      padding-bottom: 0
+#footer
+  .footer__wrap
+    ul
+      width: 100%
+
+#order
+  width: calc(100% - 362px)
+  display: inline-block
+  text-align: center
+  .order__content
+    min-height: calc(100vh - 165px)
+  .order__steps
+    padding-top: 55px
+    ul
+      display: flex
+      justify-content: center
+      width: 100%
+      max-width: 400px
+      padding-bottom: 55px
+      margin: auto
+      li
+        position: relative
+        font-size: 14px
+        font-weight: 500
+        width: 33.33%
+        &::before
+          content: ""
+          display: block
+          width: 100%
+          height: 2px
+          margin-bottom: 10px
+          border-radius: 2px
+          background-color: #e5e5e5
+        &.active::before
+          background-color: #000000
+        &.current
+          &::after
+            content: url("../img/icons/point.svg")
+            position: absolute
+            top: -14px
+            left: calc(100% - 5px)
+            display: block
+            width: 8px
+            height: 14px
+  .order__item
+    padding: 20px 0 24px
+    margin: auto
+    max-width: 460px
+    border-top: 1px solid $borderClr
+    border-bottom: 1px solid $borderClr
+    h3
+      font-weight: 400
+      font-size: 26px
+      line-height: 34px
+    p
+      font-size: 16px
+      line-height: 24px
+      color: #585858
+  .create-account
+    padding-top: 38px
+    padding-bottom: 40px
+    border-bottom: 1px solid $borderClr
+    max-width: 400px
+    margin: auto
+    h3
+      font-weight: 400
+      font-size: 26px
+      line-height: 34px
+    .log-in
+      padding: 46px 0 26px
+    p
+      display: inline-block
+      font-size: 15px
+    button
+      font-size: 15px
+      text-transform: uppercase
+    .auth-method
+      display: flex
+      justify-content: center
+      button
+        min-width: 180px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin: 0 10px
+      .auth-method__facebook
+        img
+          display: inline-block
+          width: 11px
+          height: 21px
+          transition: all 0.3s
+        @include btn(15px, $facebook, $facebook, #ffffff, #000000, 23px)
+        padding: 11px 17px 11px 26px
+        &:hover
+          img
+            filter: invert(1)
+        &:focus
+          img
+            filter: invert(0)
+    .auth-method__google
+      img
+        display: inline-block
+        width: 24px
+        height: 24px
+      @include btn(15px, $google, $google, #000000, #000000, 23px)
+      padding: 10px 9px 10px 26px
+  form
+    text-align: left
+    padding-top: 65px
+    padding-bottom: 65px
+    width: 100%
+    max-width: 400px
+    margin: 0 auto
+    label
+      font-size: 12px
+      color: #585858
+    input
+      background-color: $bgClr
+      padding: 13px 0 10px
+      border-bottom: 1px solid #333333
+      width: 100%
+      margin-top: 5px
+      font-size: 18px
+      &.error
+        border-bottom-color: $errorClr
+        color: $errorClr
+    .form__email
+      margin-bottom: 35px
+    .form__password
+      position: relative
+      margin-bottom: 35px
+      .password-show, .password-hide
+        display: inline-block
+        position: absolute
+        right: 0
+        bottom: 15px
+        color: #2b87dc
+        font-size: 16px
+        z-index: 10
+        &:after
+          content: ""
+          display: block
+          margin-top: 5px
+          width: 0
+          height: 2px
+          transition: width 0.3s
+          background-color: #2b87dc
+        &:hover:after
+          width: 100%
+    .form__price
+      font-size: 18px
+      font-weight: 500
+      padding-bottom: 60px
+    .form__btn
+      display: block
+      margin: auto
+      @include btn(15px, $continue, $continue, #ffffff, $continue, 23px)
+      padding: 14px 37px
+      &:disabled
+        opacity: 0.5
+    &.payment-form  .form__btn
+      margin-top: 30px
+  .tab__content
+    display: none
+    &.active
+      display: block
+
+form.payment-form
+  padding-top: 32px
+  p
+    color: #94959C
+    font-size: 12px
+    line-height: 20px
+  .payment-type
+    padding-bottom: 24px
+    text-align: center
+    img
+      padding-left: 8px
+  .card-number__input-wrap
+    position: relative
+    .payment-type__img
+      position: absolute
+      right: 15px
+      bottom: 7.5px
+      height: 100%
+      max-width: 40px
+  .holder-card__block, .card-number__block
+    margin-bottom: 35px
+  .input-group
+    display: flex
+    justify-content: space-between
+  .card-expires__block,
+  .cvv-cvc__block
+    display: inline-block
+    width: 45%
+    position: relative
+
+.order-sidebar
+  position: fixed
+  display: inline-block
+  height: 100%
+  width: 362px
+  background-color: $bgOrderClr
+  padding: 0 60px
+  .order-sidebar__title
+    display: flex
+    justify-content: space-between
+    align-items: baseline
+    padding: 21px 0
+    border-bottom: 1px solid $borderOrderClr
+    h2
+      font-size: 26px
+      font-weight: 400
+    img
+      width: 23px
+      height: 18px
+      &.close
+        display: none
+  h3
+    font-size: 18px
+    font-weight: 500
+    padding-top: 50px
+  p
+    font-size: 15px
+    line-height: 24px
+    padding-top: 34px
+  .order-sidebar__total
+    font-weight: 500
+
+
+.popup
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 15
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.5)
+  .popup-wrap
+    width: 300px
+    position: relative
+    justify-content: center
+    text-align: center
+    padding: 50px
+    align-items: center
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: $bgClr
+    button.popup-close
+      position: absolute
+      top: 20px
+      right: 20px
+      svg
+        width: 20px
+        height: 20px
+    img
+      width: 50px
+      padding-bottom: 30px
+    h3
+      font-size: 24px
+      padding: 50px 60px
+
+.error h3
+  color: $errorClr
+
+.success h3
+  color: #629755
+
+@media screen and (max-width: 991px)
+  #header
+    position: relative
+    .header__wrap.header-order
+      justify-content: space-between
+      .logo
+        flex-basis: auto
+    .show-sidebar
+      display: block
+      order: 2
+  #order
+    width: 100%
+    .order__content
+      padding: 0 20px
+    .order__steps ul
+      width: auto
+  .order-sidebar
+    transform: translateX(-100%)
+    &.show
+      transform: translateX(0)
+    width: 100%
+    top: 0
+    left: 0
+    z-index: 10
+    .order-sidebar__title
+      img
+        &.close
+          display: block
+        &.cart
+          display: none
+
+
+@media screen and (max-width: 475px)
+  #order .create-account .auth-method
+    flex-wrap: wrap
+    button
+      margin: 0 10px 15px
+  .order-sidebar
+    padding: 0 20px

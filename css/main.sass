@@ -1,0 +1,437 @@
+@import "vars"
+@import "mixins"
+@import "order"
+@font-face
+  font-family: "Roboto"
+  src: url("../fonts/Roboto-Regular.woff") format("woff")
+  font-weight: 400
+@font-face
+  font-family: "Roboto"
+  src: url("../fonts/Roboto-Medium.woff") format("woff")
+  font-weight: 500
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+ul, li
+  list-style: none
+
+a, button
+  color: inherit
+
+  cursor: pointer
+
+a
+  text-decoration: none
+
+button, input, textarea
+  background-color: inherit
+  appearance: none
+  border: none
+  border: 0
+  outline: none
+
+html
+  font-size: 10px
+
+body
+  font-family: "Roboto", sans-serif
+  font-weight: 400
+  color: $textClr
+  line-height: 1
+
+.container
+  max-width: 1600px
+  padding: 0 160px
+  margin: 0 auto
+
+//=============================== HEADER ===============================//
+#header
+  background-color: $bgClr
+  border-bottom: 1px solid $borderClr
+  .header__wrap
+    display: flex
+    justify-content: space-between
+    padding: 20px 40px
+    max-width: 1600px
+    margin: 0 auto
+    align-items: center
+  .back, .sing-in
+    font-size: 1.4rem
+    line-height: 1
+    text-transform: uppercase
+    svg, span
+      display: inline-block
+      vertical-align: middle
+  .back
+    svg
+      height: 15px
+      width: 8px
+      margin-right: 10px
+  .sing-in
+    svg
+      margin-right: 10px
+      height: 16px
+      width: 16px
+
+//=============================== OPTIONS ===============================//
+#options
+  border-bottom: 1px solid $borderClr
+  h2
+    padding: 60px 0 25px
+    font-size: 28px
+    font-weight: 400
+    text-align: center
+  .subtitle
+    font-size: 1.8rem
+    font-weight: 500
+    color: $subtitleClr
+    text-transform: uppercase
+    text-align: center
+  .subscription-options
+    padding: 60px 0
+    display: flex
+    justify-content: space-between
+    h3
+      font-size: 28px
+      font-weight: 400
+      padding: 30px 0 15px
+    .subscription-options__item
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      border: 1px solid #ffffff
+      box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.11)
+      flex-basis: 31.5%
+      text-align: center
+      transition: all 0.3s
+      ul
+        text-align: left
+        padding-top: 30px
+        border-top: 1px dashed $borderClr
+        li
+          position: relative
+          font-size: 15px
+          padding: 0 0 30px 28px
+          &::before
+            content: url("../img/icons/check.svg")
+            width: 14px
+            height: 12px
+            position: absolute
+            left: 0
+      &:hover
+        box-shadow: none
+        border-color: $borderClr
+      .item__content-top
+        padding: 0 30px 30px
+    .subscription-option__img
+      margin: 0 -30px
+      max-height: 200px
+      overflow: hidden
+      img
+        display: inline-block
+        width: 100%
+        vertical-align: bottom
+    .subscription-option__price
+      span
+        display: inline-block
+        font-size: 2.4rem
+        padding-bottom: 10px
+      p
+        font-size: 1.6rem
+    .subscription-option__btn
+      display: inline-block
+      padding: 14px 30px
+      margin: 26px auto 30px
+    .item__content-bottom
+      padding-bottom: 30px
+      a
+        display: inline-block
+        font-size: 1.5rem
+        font-weight: 500
+        text-transform: uppercase
+        &:after
+          content: ""
+          display: block
+          margin-top: 5px
+          width: 0
+          height: 2px
+          transition: width 0.3s
+        &:hover:after
+          width: 100%
+    .digital
+      h3, a
+        color: $digitalClr
+      a:after
+        background-color: $digitalClr
+      .subscription-option__btn
+        @include btn(1.5rem, $digitalClr, $digitalClr, #ffffff, $digitalClr, 23px)
+    .print-digital
+      h3, a
+        color: $digitalPrintClr
+      a:after
+        background-color: $digitalPrintClr
+      .subscription-option__btn
+        @include btn(1.5rem, $digitalPrintClr, $digitalPrintClr, #ffffff, $digitalPrintClr, 23px)
+    .special-offer
+      h3, a
+        color: $specialOfferClr
+      a:after
+        background-color: $specialOfferClr
+      .subscription-option__btn
+        @include btn(1.5rem, $specialOfferClr, $specialOfferClr, #ffffff, $specialOfferClr, 23px)
+  .offers
+    display: flex
+    justify-content: space-between
+    padding-top: 50px
+    padding-bottom: 40px
+    text-align: center
+    .offers__item
+      flex-basis: 32%
+      max-width: 300px
+      padding-bottom: 20px
+    h3
+      font-size: 3.4rem
+      font-weight: 400
+      color: $offerClr
+    .offers__price
+      padding: 23px 0 40px
+      font-size: 1.8rem
+    .offers__btn
+      display: inline-block
+      @include btn(1.5rem, $offerClr, $offerClr, #ffffff, $offerClr, 23px)
+      padding: 14px 30px
+
+//=============================== BENEFITS ===============================//
+#benefits
+  h2
+    font-weight: 400
+    font-size: 40px
+    text-align: center
+    padding: 60px 0
+  .benefit__content
+    display: flex
+    justify-content: space-between
+    padding-bottom: 35px
+  .benefits__item
+    flex-basis: 23%
+    text-align: center
+    padding-bottom: 20px
+    line-height: 2.4rem
+    img
+      width: 19px
+      height: 19px
+    h3
+      font-size: 18px
+      font-weight: 500
+      padding: 30px 0
+    p
+      font-size: 1.5rem
+  .benefits__slider
+    max-width: 1600px
+    margin: 0 auto
+    overflow: hidden
+  .benefits__slide
+    background-color: #000000
+    height: 500px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    color: $textLightClr
+    text-align: center
+    position: relative
+    z-index: 1
+    .benefits__slide-img
+      position: absolute
+      z-index: -1
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      opacity: 0.6
+      background-position: center
+      background-size: cover
+    p
+      text-transform: uppercase
+      font-size: 1.6rem
+      font-weight: 500
+      line-height: 3rem
+    h3
+      text-transform: uppercase
+      font-size: 4.2rem
+      font-weight: 500
+      line-height: 4.5rem
+    .benefits__slide-text
+      padding: 0 70px
+  .nav-prev, .nav-next
+    position: absolute
+    top: 50%
+    z-index: 2
+    width: 20px
+    height: 37px
+    opacity: 0.6
+    transition: opacity 0.3s
+    &:hover
+      opacity: 1
+  .nav-prev
+    left: 40px
+    transform: translateY(-50%)
+  .nav-next
+    right: 40px
+    margin-top: -37px
+    transform: rotate(180deg) translateY(-50%)
+  .slick-dots
+    display: flex
+    position: absolute
+    bottom: 73px
+    left: 50%
+    transform: translateX(-50%)
+    li
+      padding: 0 7px
+      button
+        color: transparent
+        width: 6px
+        height: 6px
+        border-radius: 50%
+        background-color: #ffffff
+        opacity: 0.6
+      &.slick-active button
+        opacity: 1
+  .benefits__text-block
+    padding: 60px 0
+    text-align: center
+    h3
+      font-size: 2.8rem
+      font-weight: 500
+      line-height: 3.4rem
+    p
+      font-size: 1.5rem
+      line-height: 2.4rem
+      padding: 30px 0 35px
+    .benefits__link
+      @include btn(14px, #ffffff, $linkBtnClr, $linkBtnClr, #ffffff, 20px)
+      padding: 10px 40px
+      &:hover
+        background-color: $linkBtnClr
+      &:focus
+        outline: none
+        background-color: #ffffff
+        border-color: $linkBtnClr
+        box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.25)
+
+//=============================== FOOTER ===============================//
+#footer
+  background-color: $bgClr
+  border-top: 1px solid $borderClr
+  color: $footerClr
+  font-size: 1.4rem
+  .footer__wrap
+    max-width: 1600px
+    margin: 0 auto
+    padding: 30px 40px
+    .copyright
+      display: inline-block
+    ul
+      text-align: center
+      display: inline-block
+      width: calc(100% - 55px)
+      li
+        display: inline-block
+        margin: 10px
+
+//=============================== Media queries ===============================//
+@media screen and (max-width: 1440px)
+  .container
+    padding: 0 120px
+
+@media screen and (max-width: 1200px)
+  .container
+    padding: 0 80px
+  #benefits .benefit__content
+    flex-wrap: wrap
+    padding-bottom: 0
+    .benefits__item
+      flex-basis: 48%
+      padding-bottom: 50px
+
+@media screen and (max-width: 991px)
+  #options .subscription-options
+    flex-wrap: wrap
+    justify-content: center
+    margin: 0 -15px
+    .subscription-options__item
+      flex-basis: calc(50% - 30px)
+      margin: 15px
+  #options .offers
+    flex-wrap: wrap
+    justify-content: center
+    padding-bottom: 20px
+    margin: 0 -15px
+    .offers__item
+      flex-basis: 100%
+      margin: 0 15px
+      padding-bottom: 40px
+
+@media screen and (max-width: 768px)
+  html
+    font-size: 9px
+  .container
+    padding: 0 60px
+  #options .subscription-options
+    margin: 0
+    .subscription-options__item
+      flex-basis: 80%
+      margin: 15px 0
+  #footer .footer__wrap
+    display: flex
+    flex-wrap: wrap
+    .copyright
+      order: 2
+      width: 100%
+      text-align: center
+      padding-top: 15px
+    ul
+      order: 1
+      width: 100%
+
+@media screen and (max-width: 620px)
+  .container
+    padding: 0 40px
+  #options .subscription-options
+    .subscription-options__item
+      flex-basis: 100%
+  #header
+    .header__wrap
+      flex-wrap: wrap
+    .logo
+      text-align: center
+      flex-basis: 100%
+      padding-bottom: 15px
+      order: 1
+    .back
+      order: 2
+    .sing-in
+      order: 3
+  #benefits .benefit__content .benefits__item
+    flex-basis: 100%
+  #benefits
+    .nav-prev
+      left: 20px
+    .nav-next
+      right: 20px
+    .benefits__slide .benefits__slide-text
+      padding: 0 50px
+
+@media screen and (max-width: 425px)
+  #header .header__wrap
+    padding: 20px
+  #footer .footer__wrap
+    padding: 30px 20px
+  .container
+    padding: 0 20px
+  #options .subscription-options
+    .subscription-options__item
+      flex-basis: 100%

@@ -1,0 +1,18 @@
+@mixin btn($fontSize, $bg, $borderClr, $clr, $hoverClr, $borderRadius)
+  font-size: $fontSize
+  font-weight: 500
+  color: $clr
+  background-color: $bg
+  border: 2px solid $borderClr
+  border-radius: $borderRadius
+  text-transform: uppercase
+  line-height: 1
+  transition: background-color 0.3s, color 0.3s
+  &:hover
+    background-color: #ffffff
+    color: $hoverClr
+  &:focus
+    background-color: darken($bg, 10)
+    border-color: darken($bg, 10)
+    color: $clr
+
